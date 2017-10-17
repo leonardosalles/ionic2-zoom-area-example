@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic2 Zoom Area
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <zoom-area [scale]="scale" afterZoomIn="afterZoomIn($event)" afterZoomOut="afterZoomOut($event)" [(controls)]="showControls">
+    <img src="assets/image.jpg" alt="Zoom It">
+  </zoom-area>
+</ion-content>

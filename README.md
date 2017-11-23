@@ -6,7 +6,9 @@
 
 A zoom area component with pinch support to zoom any element in page
 
-To see this in action, checkout the [project here](https://github.com/leonardosalles/ionic2-zoom-area).
+To see this in action, checkout the [example project here](https://github.com/leonardosalles/ionic2-zoom-area-example).
+
+IMPORTANT: This module requires Angular Animations and should be included in the app module.
 
 <br>
 
@@ -38,6 +40,26 @@ To see this in action, checkout the [project here](https://github.com/leonardosa
 <br><br><br>
 
 # Installation
+## Add Angular Animations
+```shell
+npm i --save @angular/animations
+```
+
+## Import BrowserAnimationsModule in your app's module(s)
+```ts
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+```
+
+And then
+
+```ts
+imports: [
+  ...
+  BrowserAnimationsModule,
+  ...
+]
+```
+
 ## Install the module via NPM
 ```shell
 npm i --save ionic2-zoom-area
@@ -138,6 +160,17 @@ this.zoomAreaProvider.scrollState$.subscribe(state => {
   console.log('Do whatever you want when scrollState change');
 });
 ```
+
+### setCenter (x: number, y: number)
+```ts
+setCenter: Function
+```
+It allows you to change the position of the zoom manually if zoom scale is greather than 1.
+```ts
+this.zoomAreaProvider.setCenter(x, y);
+this.zoomAreaProvider.setCenter(20, 50);
+```
+
 # Examples
 
 ## Basic example
@@ -150,6 +183,11 @@ this.zoomAreaProvider.scrollState$.subscribe(state => {
     <img src="assets/image-to-zoom.jpg" alt="Zoom It">
 </zoom-area>
 ```
+
+<br><br>
+
+## Roadmap
+- ✅(1.0.10) - Add support to move center of zoom
 
 <br><br>
 ## Contribution
